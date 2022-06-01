@@ -7,7 +7,7 @@
 /**
  * Check servie worker.
  */
-if (navigator.serviceWorker) {
+ if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
     scope: "/ICS2O-PWA-Test/",
   })
@@ -15,18 +15,22 @@ if (navigator.serviceWorker) {
 
 ;("use strict")
 /**
- * This function calculates area of a parrallelogram.
- */
-function calculate() {
-  // input
-  const length = parseInt(document.getElementById("length-of-pyramid").value)
-  const width = parseInt(document.getElementById("width-of-pyramid").value)
-  const height = parseInt(document.getElementById("height-of-pyramid").value)
+ * Get API info.
+*/
+// code from: https://www.youtube.com/watch?v=670f71LTWpM
 
-  // process
-  const volume = (length * width * height) / 3
+const getImage = async (URLAddress) => {
+  try {
+    const result = await fetch(URLAddress)
+    const jsonData = await result.json()
+    const feeling = jsonData.url
+    
+    
+    console.log(jsonData[0].url)
+    document.getElementById("api-image").innerHTML = '<img src="' + jsonData[0].url + '" alt="Cat image" class="center" width="40%" ' + ">"; 
 
-  // output
-  document.getElementById("answers").innerHTML =
-    "Volume is: " + volume.toFixed(2) + " cm³"
-}
+  } catch (err) {
+    console.log(err);
+  };
+};
+getImage("https://api.thecatapi.com/v1/images/search")
