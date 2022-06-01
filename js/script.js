@@ -17,8 +17,6 @@
 /**
  * Get API info.
 */
-// code from: https://www.youtube.com/watch?v=670f71LTWpM
-
 const getImage = async (URLAddress) => {
   try {
     const result = await fetch(URLAddress)
