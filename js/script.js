@@ -1,4 +1,4 @@
-// Copyright (c) 2020 Johanna Liu All rights reserved
+// Copyright (c) 2022 Johanna Liu All rights reserved
 //
 // Created by: Johanna Liu
 // Created on: Mar 2022
@@ -8,8 +8,8 @@
  * Check servie worker.
  */
  if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ICS2O-Assignment-6-JS/sw.js", {
+    scope: "/ICS2O-Assignment-6-JS/",
   })
 }
 
